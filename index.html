@@ -11,9 +11,10 @@
 <meta property="og:description" content="Un'IA propria: costruita sulle esigenze dell'istituto, con motori locali e dati che restano in casa.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-32 -32 64 64'%3E%3Crect x='-32' y='-32' width='64' height='64' rx='14'/%3E%3Cpath fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' d='M15.6-12.2A19.8 19.8 0 1 0 15.6 12.2'/%3E%3Cpath fill='%23fff' d='M0-12.5C.9-3.6 3.2-.9 11.5 0 3.2.9.9 3.6 0 12.5-.9 3.6-3.2.9-11.5 0-3.2-.9-.9-3.6 0-12.5Z'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Inter:wght@300..600&display=swap" rel="stylesheet">
+
 <style>
+@font-face{font-family:"Michroma";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/michroma-latin.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:300 600;font-display:swap;src:url(fonts/inter-latin.woff2) format("woff2")}
 @property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
 :root{
   --k:#000; --w:#fff; --g:#f5f5f7; --t1:#1d1d1f; --t2:#6e6e73; --d2:#a1a1a6; --d3:#6e6e73;
@@ -225,12 +226,18 @@ h2{font-size:clamp(24px,3.1vw,64px);line-height:1.18;letter-spacing:.01em;max-wi
 .fld input:focus+label,.fld input:not(:placeholder-shown)+label{top:14px;transform:none;font-size:11px}
 .bk-cal{border-radius:14px;overflow:hidden;background:#fff;height:clamp(560px,40vw,680px)}
 .bk-cal iframe{width:100%;height:100%;border:0;display:block}
+.bk-cal:has(.bk-gate){background:rgba(255,255,255,.04);border:1px solid var(--ln)}
+.bk-gate{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:clamp(22px,2.4vw,44px);text-align:center}
+.bk-gate p{margin:0;color:var(--d2);font-size:clamp(14px,.9vw,17px);line-height:1.55;max-width:30em}
+.bk-gate a{color:#fff;text-decoration:underline;text-underline-offset:3px}
 .bk-go{margin-top:clamp(16px,1.4vw,24px)}
 .bk-sum{margin:clamp(22px,2vw,34px) 0 14px;padding-top:clamp(16px,1.4vw,24px);border-top:1px solid var(--ln);font:400 clamp(13px,1vw,19px)/1.4 var(--disp);min-height:1.4em}
 .bk-go{width:100%}
 .bk-note{margin:14px 0 0;font-size:clamp(12px,.75vw,14px);color:var(--d3);text-align:center}
 footer{background:#000;border-top:1px solid var(--ln);padding:clamp(24px,2.2vw,40px) var(--pad);font-size:clamp(12px,.72vw,14px);color:var(--d3);display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap;align-items:center}
 footer .brand{color:#fff;font-size:11px}
+footer a{color:var(--d2);text-decoration:underline;text-underline-offset:3px}
+footer a:hover{color:#fff}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.h-top p,.h-bot{opacity:1;transform:none}.h-top h1 span.l>span{transform:none}html{scroll-behavior:auto}.mani span.w{color:#1d1d1f}}
 </style>
 </head>
@@ -388,7 +395,10 @@ footer .brand{color:#fff;font-size:11px}
   <div class="bk-r rv" style="--d:.1s">
     <div class="bk-card">
       <p class="bk-h"><span class="it">Scegliete i vostri venti minuti</span><span class="en">Choose your twenty minutes</span></p>
-      <div class="bk-cal"><iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0jZ8EcgM3J45Seu-IWoD2GR4tRXf8cUOuWkKA-FJJhOCjnU9x3p3FwxXBzV3qRbIX53WN-maaB?gv=true" title="Conversazione · Cefeide" loading="lazy"></iframe></div>
+      <div class="bk-cal" id="bkCal"><div class="bk-gate">
+        <p><span class="it">Il calendario delle prenotazioni è fornito da Google. Caricandolo, Google riceve i dati di navigazione e può impostare propri cookie.</span><span class="en">The booking calendar is provided by Google. When loaded, Google receives browsing data and may set its own cookies.</span> <a href="privacy.html#cookie"><span class="it">Informativa</span><span class="en">Notice</span></a></p>
+        <button class="btn lz" id="bkLoad"><span class="it">Mostra il calendario</span><span class="en">Show the calendar</span></button>
+      </div></div>
       <a class="btn go lz bk-go" id="mail" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0jZ8EcgM3J45Seu-IWoD2GR4tRXf8cUOuWkKA-FJJhOCjnU9x3p3FwxXBzV3qRbIX53WN-maaB" target="_blank" rel="noopener"><span class="it">Scopri come funziona</span><span class="en">See how it works</span></a>
       <p class="bk-note"><span class="it">Google Calendar invia la conferma con il link Meet.</span><span class="en">Google Calendar sends the confirmation with the Meet link.</span></p>
     </div>
@@ -396,7 +406,7 @@ footer .brand{color:#fff;font-size:11px}
 </div></section>
 </main>
 
-<footer><span class="brand">CEFEIDE</span><span><span class="it">Intelligenza privata per la finanza · Roma</span><span class="en">Private intelligence for finance · Rome</span></span><span>© 2026 Cefeide</span></footer>
+<footer><span class="brand">CEFEIDE</span><span><span class="it">Sito a cura di</span><span class="en">Website by</span> Plantiverse S.r.l. · Via Benadir 8, 00199 Roma · P.IVA 17762971004</span><span><a href="privacy.html">Privacy</a> · <a href="privacy.html#cookie">Cookie</a> · © 2026</span></footer>
 
 <script>
 (function(){
@@ -535,6 +545,7 @@ var sha256=(function(){var K=[],H0=[],n=2,i=0;while(i<64){var p=true;for(var d=2
 })();
 
 
+$("#bkLoad").onclick=function(){$("#bkCal").innerHTML='<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0jZ8EcgM3J45Seu-IWoD2GR4tRXf8cUOuWkKA-FJJhOCjnU9x3p3FwxXBzV3qRbIX53WN-maaB?gv=true" title="Conversazione · Cefeide"></iframe>'};
 try{if(localStorage.getItem("cefeide-lang")==="en")setLang(true);else relang.forEach(function(f){f()})}catch(_){relang.forEach(function(f){f()})}
 mani();
 })();
