@@ -551,7 +551,7 @@ var sha256=(function(){var K=[],H0=[],n=2,i=0;while(i<64){var p=true;for(var d=2
 
 
 (function(){
-  var d0=new Date(),D=[],di=0,ti=0,fi=0,TM=["09:30","11:00","12:30","15:00","16:30","18:00"],FM=[["Video","Video"],["A Roma","In Rome"]];
+  var d0=new Date(),D=[],di=0,ti=0,fi=0,TM=["10:00","10:30","11:00","11:30","15:00","15:30"],FM=[["Video","Video"],["A Roma","In Rome"]];
   for(var k=1;D.length<8;k++){var d=new Date(d0.getFullYear(),d0.getMonth(),d0.getDate()+k);if(d.getDay()%6)D.push(d)}
   function loc(){return en()?"en-GB":"it-IT"}
   function long(d){var t=d.toLocaleDateString(loc(),{weekday:"long",day:"numeric",month:"long"});return t.charAt(0).toUpperCase()+t.slice(1)}
