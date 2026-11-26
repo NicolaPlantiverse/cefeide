@@ -537,16 +537,16 @@ var sha256=(function(){var K=[],H0=[],n=2,i=0;while(i<64){var p=true;for(var d=2
     var R=Math.min(W,H)*.07;[[n.d,T("Dati","Data"),"#fff",1],[n.e,T("Motori","Engines"),"#fff",!cloud],[n.o,T("Esiti","Outcomes"),"#fff",1],[n.c,"Cloud",RED,cloud]].forEach(function(a){var p=a[0];x.globalAlpha=a[3]?1:.14;
       x.beginPath();x.arc(p[0],p[1],R,0,6.283);x.strokeStyle=a[2];x.lineWidth=1;x.stroke();x.beginPath();x.arc(p[0],p[1],R*.2*(1+.14*Math.sin(now*.003+p[0])),0,6.283);x.fillStyle=a[2];x.fill();
       x.textAlign="center";x.fillStyle="rgba(255,255,255,.8)";x.fillText(a[1].toUpperCase(),p[0],p[1]+R+fs*2.2);x.globalAlpha=1});
-    if(!RM&&now-sp>110){sp=now;P.push({t:0,cl:cloud,j:(Math.random()-.5)*H*.08})}
+    if(now-sp>110){sp=now;P.push({t:0,cl:cloud,j:(Math.random()-.5)*H*.08})}
     for(var i=P.length-1;i>=0;i--){var q=P[i];q.t+=.008;if(q.t>=1){P.splice(i,1);continue}var a,bb,k,col;
       if(!q.cl){col=q.t<.5?"#fff":ICE;if(q.t<.5){a=n.d;bb=n.e;k=q.t*2}else{a=n.e;bb=n.o;k=(q.t-.5)*2}}
       else{col=RED;if(q.t<.5){a=n.d;bb=n.c;k=q.t*2;if(!q.c&&k>.62){q.c=1;leak++;$("#leak").textContent=leak}}else{a=n.c;bb=n.o;k=(q.t-.5)*2}}
       var e=k*k*(3-2*k),px=a[0]+(bb[0]-a[0])*e,py=a[1]+(bb[1]-a[1])*e+Math.sin(e*3.1416)*(q.j-(q.cl?H*.2:0));
       x.beginPath();x.arc(px,py,Math.max(1.6,W*.0032),0,6.283);x.fillStyle=col;x.shadowColor=col;x.shadowBlur=10;x.fill();x.shadowBlur=0}
-    if(!RM)requestAnimationFrame(draw)}
-  function set(v){cloud=v;$("#swA").classList.toggle("a",!v);$("#swB").classList.toggle("a",v);if(!v){leak=0;$("#leak").textContent="0"}$("#leak").style.color=v?RED:""}
+    requestAnimationFrame(draw)}
+  function set(v){cloud=v;$("#swA").classList.toggle("a",!v);$("#swB").classList.toggle("a",v);leak=0;$("#leak").textContent="0";$("#leak").style.color=v?RED:""}
   $("#swA").onclick=function(){set(false)};$("#swB").onclick=function(){set(true)};
-  addEventListener("resize",size);new IntersectionObserver(function(e){vis=e[0].isIntersecting;if(vis&&RM)draw(0)}).observe(c);size();requestAnimationFrame(draw);
+  addEventListener("resize",size);new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(c);size();requestAnimationFrame(draw);
 })();
 
 
