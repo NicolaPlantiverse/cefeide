@@ -459,7 +459,7 @@ function glp(c,fs){var gl=c.getContext("webgl",{antialias:false,alpha:false,pres
   function curve(p){p=p-Math.floor(p);if(p<.28){var s=p/.28;return s*s*(3-2*s)}return Math.pow(1-(p-.28)/.72,1.35)}
   function size(){var s=Math.min(1,1700/c.clientWidth)*Math.min(devicePixelRatio||1,1.5);W=c.width=Math.max(2,Math.round(c.clientWidth*s));H=c.height=Math.max(2,Math.round(c.clientHeight*s));gl.viewport(0,0,W,H)}
   function frame(now){if(vis){tx+=(mx-tx)*.04;ty+=(my-ty)*.04;var ph=now/5366,tall=c.clientHeight>c.clientWidth,w=ph-.28;w=w-Math.floor(w);
-    gl.uniform2f(ur,W,H);gl.uniform1f(ut,now*.001);gl.uniform2f(um,tx,ty);gl.uniform1f(uL,RM?.6:curve(ph));gl.uniform1f(uW,RM?.3:w);gl.uniform1f(uo,tall?-.06:-.135);gl.uniform1f(us,tall?1.5:1.);G.draw()}if(!RM)requestAnimationFrame(frame)}
+    gl.uniform2f(ur,W,H);gl.uniform1f(ut,now*.001);gl.uniform2f(um,tx,ty);gl.uniform1f(uL,curve(ph));gl.uniform1f(uW,w);gl.uniform1f(uo,tall?-.06:-.135);gl.uniform1f(us,tall?1.5:1.);G.draw()}requestAnimationFrame(frame)}
   addEventListener("resize",size);addEventListener("pointermove",function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5},{passive:true});
   new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe($("#hero"));size();requestAnimationFrame(frame);
 })();
