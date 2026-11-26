@@ -7,6 +7,7 @@
 <meta name="description" content="Cefeide costruisce per banche, assicurazioni e fintech un'intelligenza artificiale tutta tua: disegnata sulle tue esigenze, installata nei tuoi sistemi, verificabile in ogni decisione.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#000000">
+<script>(function(){try{var d=document.documentElement,q=location.search,m=q.match(/[?&]tema=(originale|carta|spettro)/);if(/[?&](temi|tema=)/.test(q))localStorage.setItem("cefeide-temi","1");if(m)localStorage.setItem("cefeide-tema",m[1]);var t=localStorage.getItem("cefeide-tema");if(t==="carta"||t==="spettro")d.dataset.theme=t}catch(e){}})()</script>
 <meta property="og:title" content="Cefeide · Intelligenza privata per la finanza">
 <meta property="og:description" content="Un'IA tutta tua: costruita sulle tue esigenze, con motori locali e dati che restano in house.">
 <meta property="og:type" content="website">
@@ -238,6 +239,69 @@ footer{background:#000;border-top:1px solid var(--ln);padding:clamp(24px,2.2vw,4
 footer .brand{color:#fff;font-size:11px}
 footer a{color:var(--d2);text-decoration:underline;text-underline-offset:3px}
 footer a:hover{color:#fff}
+/* temi: Carta (nero opaco, bianco da lettura) e Spettro (accessori al colore della stella) */
+.thm i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:8px;vertical-align:0;background:linear-gradient(90deg,#fff 50%,#000 50%);box-shadow:0 0 0 1px rgba(255,255,255,.55)}
+html[data-theme=carta] .thm i{background:linear-gradient(90deg,#F1EBDF 50%,#131312 50%)}
+html[data-theme=spettro] .thm i{background:var(--acc);box-shadow:0 0 0 1px var(--acc),0 0 10px var(--acc)}
+
+html[data-theme=carta]{--k:#131312;--w:#F1EBDF;--g:#E6DFD0;--t1:#2A2723;--t2:#6E675C;--d2:#ABA498;--d3:#7F786C;--ln:rgba(241,235,223,.12);--lnl:rgba(42,39,35,.14);--lz:#D9CFBD}
+html[data-theme=carta] ::selection{background:#2A2723;color:#F1EBDF}
+html[data-theme=carta] body::after{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;opacity:.07;background-size:200px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+html[data-theme=carta] .nav,html[data-theme=carta] .lang b,html[data-theme=carta] .btn,html[data-theme=carta] .chip:hover,html[data-theme=carta] .chip.a,html[data-theme=carta] .bud output,html[data-theme=carta] .blk span b,html[data-theme=carta] .day:hover,html[data-theme=carta] .fld input,html[data-theme=carta] .bk-gate a,html[data-theme=carta] footer .brand,html[data-theme=carta] footer a:hover{color:var(--w)}
+html[data-theme=carta] .nav.s{background:rgba(19,19,18,.72)}
+html[data-theme=carta] .lang{color:rgba(241,235,223,.55)}
+html[data-theme=carta] .nav nav a:hover,html[data-theme=carta] .lang:hover{background:rgba(241,235,223,.1)}
+html[data-theme=carta] .btn{background:rgba(241,235,223,.12)}
+html[data-theme=carta] .btn:hover{background:rgba(241,235,223,.2)}
+html[data-theme=carta] .btn.go{background:var(--w);color:var(--k)}
+html[data-theme=carta] .btn.go:hover{background:#E7E0D2}
+html[data-theme=carta] .lt .btn,html[data-theme=carta] .gy .btn{background:rgba(42,39,35,.07);color:var(--t1)}
+html[data-theme=carta] .lt .btn.go,html[data-theme=carta] .gy .btn.go{background:var(--k);color:var(--w)}
+html[data-theme=carta] .h-top p{color:rgba(241,235,223,.72)}
+html[data-theme=carta] .mani span.w{color:#B4AC9E}
+html[data-theme=carta] .mani span.w.on{color:var(--t1)}
+html[data-theme=carta] .bc,html[data-theme=carta] .nm{background:#F8F3E9}
+html[data-theme=carta] .bc.k{background:var(--k)}
+html[data-theme=carta] .bc.k::before{background:linear-gradient(to top,rgba(19,19,18,.92) 6%,rgba(19,19,18,.35) 50%,rgba(19,19,18,0) 78%)}
+html[data-theme=carta] .bc.k p{color:rgba(241,235,223,.72)}
+html[data-theme=carta] .bc.k .n{color:rgba(241,235,223,.7)}
+html[data-theme=carta] .box{background:#1A1917}
+html[data-theme=carta] .stage{background:#181715}
+html[data-theme=carta] .chip{color:rgba(241,235,223,.7)}
+html[data-theme=carta] .chip:hover{border-color:rgba(241,235,223,.4)}
+html[data-theme=carta] .chip.a{background:rgba(241,235,223,.08)}
+html[data-theme=carta] .tl{background:rgba(241,235,223,.06)}
+html[data-theme=carta] .tl.on{color:var(--k);background:var(--w);box-shadow:0 0 0 1px var(--w)}
+html[data-theme=carta] .bud input{accent-color:#F1EBDF}
+html[data-theme=carta] .vr::after{background:linear-gradient(90deg,var(--t1),#A39B8D,var(--t1))}
+html[data-theme=carta] #contatto{background:radial-gradient(60% 70% at 78% 55%,rgba(241,235,223,.045),transparent 70%),var(--k)}
+html[data-theme=carta] .bk-card{background:rgba(241,235,223,.035);box-shadow:none}
+html[data-theme=carta] .bk-card::after{background:linear-gradient(90deg,transparent,rgba(241,235,223,.35),transparent)}
+html[data-theme=carta] .day{color:rgba(241,235,223,.75)}
+html[data-theme=carta] .day:hover{border-color:rgba(241,235,223,.4)}
+html[data-theme=carta] .day.a{background:var(--w);color:var(--k);border-color:var(--w)}
+html[data-theme=carta] .day.a small,html[data-theme=carta] .day.a i{color:#6E675C}
+html[data-theme=carta] .fld input{background:rgba(0,0,0,.22)}
+html[data-theme=carta] .fld input:focus{border-color:#CFC6B4}
+html[data-theme=carta] footer{background:var(--k)}
+html[data-theme=carta] .lz::before{background:conic-gradient(from var(--a),rgba(0,0,0,0) 0 10%,#6F695F 28%,#E9E2D4 46%,#6F695F 62%,rgba(0,0,0,0) 80% 100%);filter:none;animation-duration:3.4s}
+html[data-theme=carta] .lt .lz::before,html[data-theme=carta] .gy .lz::before{background:conic-gradient(from var(--a),rgba(0,0,0,0) 0 10%,#B8AF9F 28%,#2A2723 46%,#B8AF9F 62%,rgba(0,0,0,0) 80% 100%);filter:none}
+html[data-theme=carta] .beam::after{background-image:linear-gradient(90deg,transparent,#8D867A,#E9E2D4,#8D867A,transparent)}
+
+html[data-theme=spettro]{--acc:#8FD3FF;--acc2:#B28CFF;--lz:var(--acc)}
+html[data-theme=spettro] ::selection{background:var(--acc);color:#000}
+html[data-theme=spettro] .lz::before,html[data-theme=spettro] .lt .lz::before,html[data-theme=spettro] .gy .lz::before{background:conic-gradient(from var(--a),rgba(0,0,0,0) 0 8%,var(--acc2) 24%,var(--acc) 40%,#fff 47%,var(--acc) 54%,var(--acc2) 66%,rgba(0,0,0,0) 80% 100%);filter:drop-shadow(0 0 6px var(--acc))}
+html[data-theme=spettro] .beam::after{background-image:linear-gradient(90deg,transparent,var(--acc2),var(--acc),#fff,var(--acc),var(--acc2),transparent)}
+html[data-theme=spettro] .nav.s{box-shadow:0 1px 0 color-mix(in srgb,var(--acc) 45%,transparent)}
+html[data-theme=spettro] .tl.on{box-shadow:0 0 0 1px #fff,0 0 22px var(--acc)}
+html[data-theme=spettro] .vr::after{background:linear-gradient(90deg,var(--acc2),var(--acc),var(--acc2))}
+html[data-theme=spettro] .bk-card::after{background:linear-gradient(90deg,transparent,var(--acc),transparent)}
+html[data-theme=spettro] .blk.good{border-color:var(--acc)}
+html[data-theme=spettro] .blk i{color:#fff}
+html[data-theme=spettro] .cmsg.ok{color:var(--d2)}
+html[data-theme=spettro] .day.a{box-shadow:0 0 0 1px var(--acc),0 0 24px -6px var(--acc)}
+html[data-theme=spettro] .bud input{accent-color:var(--acc)}
+html[data-theme=spettro] #contatto{background:radial-gradient(60% 70% at 78% 55%,color-mix(in srgb,var(--acc) 16%,transparent),transparent 70%),#000}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.h-top p,.h-bot{opacity:1;transform:none}.h-top h1 span.l>span{transform:none}html{scroll-behavior:auto}.mani span.w{color:#1d1d1f}}
 </style>
 </head>
@@ -252,7 +316,7 @@ footer a:hover{color:#fff}
     <a href="#applicazioni"><span class="it">Applicazioni</span><span class="en">Applications</span></a>
     <a href="#chi"><span class="it">Chi siamo</span><span class="en">About</span></a>
   </nav>
-  <div class="r"><button class="lang" id="lang" aria-label="Lingua / Language"><b class="it">IT</b><span class="en">IT</span> · <span class="it">EN</span><b class="en">EN</b></button>
+  <div class="r"><button class="lang thm" id="thm" hidden aria-label="Tema / Theme"><i></i><span id="thmN"></span></button><button class="lang" id="lang" aria-label="Lingua / Language"><b class="it">IT</b><span class="en">IT</span> · <span class="it">EN</span><b class="en">EN</b></button>
   <a class="btn lz" href="#contatto"><span class="it">Scopri come funziona</span><span class="en">See how it works</span></a></div>
 </header>
 
@@ -420,6 +484,26 @@ var $=function(s){return document.querySelector(s)},$$=function(s){return [].sli
 var root=document.documentElement,RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
 function en(){return root.classList.contains("en")} function T(a,b){return en()?b:a}
 var relang=[];
+/* temi */
+var ACC=[143,211,255],rethem=[];
+function curveC(p){p=p-Math.floor(p);if(p<.28){var s=p/.28;return s*s*(3-2*s)}return Math.pow(1-(p-.28)/.72,1.35)}
+var THS={originale:{bk:[.006,.006,.006],ic:[.82,.9,1],art:[[.012,.012,.012],[.86,.92,1],[.06,.07,.09]],fgc:"255,255,255",ice:"#a9dcff",glow:1,meta:"#000000",nm:["Originale","Original"]},
+  carta:{bk:[.072,.071,.066],ic:[.94,.91,.84],art:[[.072,.071,.066],[.9,.87,.8],[.05,.047,.04]],fgc:"241,235,223",ice:"#D9CFBD",glow:0,meta:"#131312",nm:["Carta","Paper"]},
+  spettro:{bk:[.006,.006,.006],ic:null,art:[[.012,.012,.012],[.86,.92,1],[.06,.07,.09]],fgc:"255,255,255",ice:null,glow:1,meta:"#000000",nm:["Spettro","Spectrum"]}};
+var TH={};
+function thn(){return THS[root.dataset.theme]?root.dataset.theme:"originale"}
+function applyTH(){var t=THS[thn()];TH={bk:t.bk,art:t.art,fgc:t.fgc,fg:"rgb("+t.fgc+")",glow:t.glow,
+  ice:function(){return t.ice||"rgb("+ACC.join(",")+")"},
+  ic:function(){return t.ic||ACC.map(function(v){return .42+.58*v/255})}};
+  var m=document.querySelector('meta[name="theme-color"]');if(m)m.content=t.meta;var b=$("#thmN");if(b)b.textContent=T(t.nm[0],t.nm[1])}
+function setTheme(n){if(n==="originale")delete root.dataset.theme;else root.dataset.theme=n;try{localStorage.setItem("cefeide-tema",n)}catch(_){}applyTH();rethem.forEach(function(f){f()})}
+applyTH();relang.push(applyTH);
+try{if(localStorage.getItem("cefeide-temi")==="1")$("#thm").hidden=false}catch(_){}
+$("#thm").onclick=function(){var k=Object.keys(THS);setTheme(k[(k.indexOf(thn())+1)%k.length])};
+/* Spettro: gli accessori seguono la temperatura della stella, azzurri al massimo di luce, ambra al minimo */
+setInterval(function(){if(root.dataset.theme!=="spettro")return;var L=curveC(performance.now()/5366),H=[143,211,255],C=[255,172,82],V=[178,140,255],R=[255,110,140];
+  ACC=C.map(function(c,i){return Math.round(c+(H[i]-c)*L)});var A2=R.map(function(c,i){return Math.round(c+(V[i]-c)*L)});
+  root.style.setProperty("--acc","rgb("+ACC.join(",")+")");root.style.setProperty("--acc2","rgb("+A2.join(",")+")")},70);
 function setLang(e){root.classList.toggle("en",e);root.lang=e?"en":"it";try{localStorage.setItem("cefeide-lang",e?"en":"it")}catch(_){}
   document.title=e?"Cefeide · Private intelligence for finance":"Cefeide · Intelligenza privata per la finanza";relang.forEach(function(f){f()})}
 $("#lang").onclick=function(){setLang(!en())};
@@ -440,26 +524,26 @@ function glp(c,fs){var gl=c.getContext("webgl",{antialias:false,alpha:false,pres
 
 /* copertina: la Cefeide in controluce, pulsa e lascia un'onda a ogni ciclo */
 (function(){
-  var c=$("#st"),G=glp(c,"precision highp float;uniform vec2 r;uniform float t;uniform vec2 m;uniform float L;uniform float W;uniform float oy;uniform float sc;"+
+  var c=$("#st"),G=glp(c,"precision highp float;uniform vec2 r;uniform float t;uniform vec2 m;uniform float L;uniform float W;uniform float oy;uniform float sc;uniform vec3 ic;uniform vec3 bk;"+
   "float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}"+
   "float ns(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(hash(i),hash(i+vec2(1.,0.)),f.x),mix(hash(i+vec2(0.,1.)),hash(i+vec2(1.,1.)),f.x),f.y);}"+
   "float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*ns(p);p=p*2.03+7.;a*=.5;}return v;}"+
   "void main(){vec2 uv=(gl_FragCoord.xy-.5*r)/r.y;uv.y-=oy;uv*=sc;float l=length(uv);float R=.185*(1.+.045*L);"+
   "vec3 ld=normalize(vec3(-.5+m.x*1.6,.62-m.y*1.2,-.42));vec2 dir=uv/max(l,.0001);float side=.25+.75*smoothstep(-.3,1.,dot(dir,normalize(ld.xy)));"+
-  "vec3 ice=vec3(.82,.9,1.);vec3 col=vec3(.006);float o=max(l-R,0.);"+
-  "col+=ice*exp(-o*26.)*side*(.55+.6*L);col+=ice*exp(-o*6.)*side*(.12+.16*L);col+=vec3(.5,.56,.68)*exp(-o*1.9)*(.035+.05*L);"+
+  "vec3 ice=ic;vec3 col=bk;float o=max(l-R,0.);"+
+  "col+=ice*exp(-o*26.)*side*(.55+.6*L);col+=ice*exp(-o*6.)*side*(.12+.16*L);col+=ice*vec3(.61,.62,.68)*exp(-o*1.9)*(.035+.05*L);"+
   "float ang=atan(uv.y,uv.x);float st=fbm(vec2(ang*7.,l*2.5-t*.06));col+=ice*pow(st,3.)*exp(-o*4.5)*side*.35*(.5+L);"+
   "float zz=sqrt(max(R*R-l*l,0.))/R;vec3 n=vec3(uv/R,zz);float dif=max(0.,dot(n,ld));float gr=fbm(n.xy*7.+vec2(t*.03,n.z*2.));"+
-  "vec3 sp=vec3(.008)+ice*pow(dif,1.3)*1.5*(.7+.6*gr)+ice*pow(1.-zz,3.)*side*(.3+.45*L);"+
+  "vec3 sp=bk+vec3(.002)+ice*pow(dif,1.3)*1.5*(.7+.6*gr)+ice*pow(1.-zz,3.)*side*(.3+.45*L);"+
   "col=mix(col,sp,smoothstep(R,R-.0035,l));"+
   "float rw=R+W*1.05;col+=ice*smoothstep(.0032,.0,abs(l-rw))*.55*(1.-W)*(1.-W)*smoothstep(.0,.04,W);"+
   "col+=(hash(gl_FragCoord.xy+t)-.5)*.012;gl_FragColor=vec4(pow(col,vec3(.92)),1.);}");
   if(!G){c.style.background="radial-gradient(30% 30% at 50% 60%,#3a3d44,#000 70%)";return}
-  var gl=G.gl,ur=G.u("r"),ut=G.u("t"),um=G.u("m"),uL=G.u("L"),uW=G.u("W"),uo=G.u("oy"),us=G.u("sc"),mx=0,my=0,tx=0,ty=0,vis=true,W,H;
+  var gl=G.gl,ur=G.u("r"),ut=G.u("t"),um=G.u("m"),uL=G.u("L"),uW=G.u("W"),uo=G.u("oy"),us=G.u("sc"),uic=G.u("ic"),ubk=G.u("bk"),mx=0,my=0,tx=0,ty=0,vis=true,W,H;
   function curve(p){p=p-Math.floor(p);if(p<.28){var s=p/.28;return s*s*(3-2*s)}return Math.pow(1-(p-.28)/.72,1.35)}
   function size(){var s=Math.min(1,1700/c.clientWidth)*Math.min(devicePixelRatio||1,1.5);W=c.width=Math.max(2,Math.round(c.clientWidth*s));H=c.height=Math.max(2,Math.round(c.clientHeight*s));gl.viewport(0,0,W,H)}
   function frame(now){if(vis){tx+=(mx-tx)*.04;ty+=(my-ty)*.04;var ph=now/5366,tall=c.clientHeight>c.clientWidth,w=ph-.28;w=w-Math.floor(w);
-    gl.uniform2f(ur,W,H);gl.uniform1f(ut,now*.001);gl.uniform2f(um,tx,ty);gl.uniform1f(uL,curve(ph));gl.uniform1f(uW,w);gl.uniform1f(uo,tall?-.06:-.135);gl.uniform1f(us,tall?1.5:1.);G.draw()}requestAnimationFrame(frame)}
+    gl.uniform2f(ur,W,H);gl.uniform1f(ut,now*.001);gl.uniform2f(um,tx,ty);gl.uniform1f(uL,curve(ph));gl.uniform1f(uW,w);gl.uniform1f(uo,tall?-.06:-.135);gl.uniform1f(us,tall?1.5:1.);var I=TH.ic();gl.uniform3f(uic,I[0],I[1],I[2]);gl.uniform3f(ubk,TH.bk[0],TH.bk[1],TH.bk[2]);G.draw()}requestAnimationFrame(frame)}
   addEventListener("resize",size);addEventListener("pointermove",function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5},{passive:true});
   new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe($("#hero"));size();requestAnimationFrame(frame);
 })();
@@ -467,7 +551,7 @@ function glp(c,fs){var gl=c.getContext("webgl",{antialias:false,alpha:false,pres
 /* immagini generative, monocrome */
 (function(){
   var oc=document.createElement("canvas");oc.width=1600;oc.height=900;
-  var G=glp(oc,"precision highp float;uniform vec2 r;uniform float s;uniform int md;"+
+  var G=glp(oc,"precision highp float;uniform vec2 r;uniform float s;uniform int md;uniform vec3 ink;uniform vec3 bg;uniform vec3 hz;"+
   "float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}"+
   "float ns(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(hash(i),hash(i+vec2(1.,0.)),f.x),mix(hash(i+vec2(0.,1.)),hash(i+vec2(1.,1.)),f.x),f.y);}"+
   "float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*ns(p);p=p*2.03+7.;a*=.5;}return v;}"+
@@ -475,9 +559,11 @@ function glp(c,fs){var gl=c.getContext("webgl",{antialias:false,alpha:false,pres
   "if(md==0){vec2 q=uv*vec2(.55,1.4)+s;float f=fbm(q+1.6*vec2(fbm(q+s),fbm(q+3.1)));float y=uv.y-.12+.3*(f-.5);for(int i=0;i<26;i++){float k=float(i);float yy=y+(k-13.)*.03*(1.+.8*f);v+=smoothstep(.0045,.0,abs(yy))*(.25+.75*smoothstep(.0,13.,13.-abs(k-13.)));}v*=.75*smoothstep(1.2,.2,abs(uv.x));}"+
   "else if(md==1){vec2 p=uv-vec2(.0,.16);vec2 g=fract(p*11.)-.5;vec2 id=floor(p*11.);float dd=length(id+.5)/11.;float on=step(.52,hash(id+s))*smoothstep(.75,.1,dd);float sq=max(abs(g.x),abs(g.y));v=smoothstep(.36,.33,sq)*(.07+.93*on)*smoothstep(.95,.3,dd);v+=exp(-9.*dd)*.25;}"+
   "else{vec2 p=uv-vec2(.0,.1);float l=length(p);float a=atan(p.y,p.x);for(int i=0;i<7;i++){float k=float(i);float rr=.16+k*.085;float gap=step(.12,fract(a/6.2832+hash(vec2(k,s))+.5));v+=smoothstep(.0035,.0,abs(l-rr))*gap*(1.-k*.1);}v+=smoothstep(.05,.035,l);v*=smoothstep(1.3,.3,abs(uv.x));}"+
-  "vec3 col=vec3(.012)+vec3(.86,.92,1.)*v;col+=vec3(.06,.07,.09)*exp(-2.5*length(uv-vec2(0.,.15)));col+=(hash(gl_FragCoord.xy)-.5)*.02;gl_FragColor=vec4(col,1.);}");
-  if(!G)return;[[0,2.7],[1,4.4],[2,1.3]].forEach(function(sp,i){var gl=G.gl;gl.viewport(0,0,1600,900);gl.uniform2f(G.u("r"),1600,900);gl.uniform1f(G.u("s"),sp[1]);gl.uniform1i(G.u("md"),sp[0]);G.draw();
-    $$('canvas[data-art="'+i+'"]').forEach(function(c){var ar=c.clientWidth/Math.max(1,c.clientHeight),sw=1600,shh=900;if(ar>16/9)shh=1600/ar;else sw=900*ar;c.width=Math.round(sw);c.height=Math.round(shh);c.getContext("2d").drawImage(oc,(1600-sw)/2,(900-shh)/2,sw,shh,0,0,c.width,c.height)})});
+  "vec3 col=bg+ink*v;col+=hz*exp(-2.5*length(uv-vec2(0.,.15)));col+=(hash(gl_FragCoord.xy)-.5)*.02;gl_FragColor=vec4(col,1.);}");
+  if(!G)return;function art(){var A=TH.art;G.gl.uniform3f(G.u("bg"),A[0][0],A[0][1],A[0][2]);G.gl.uniform3f(G.u("ink"),A[1][0],A[1][1],A[1][2]);G.gl.uniform3f(G.u("hz"),A[2][0],A[2][1],A[2][2]);
+  [[0,2.7],[1,4.4],[2,1.3]].forEach(function(sp,i){var gl=G.gl;gl.viewport(0,0,1600,900);gl.uniform2f(G.u("r"),1600,900);gl.uniform1f(G.u("s"),sp[1]);gl.uniform1i(G.u("md"),sp[0]);G.draw();
+    $$('canvas[data-art="'+i+'"]').forEach(function(c){var ar=c.clientWidth/Math.max(1,c.clientHeight),sw=1600,shh=900;if(ar>16/9)shh=1600/ar;else sw=900*ar;c.width=Math.round(sw);c.height=Math.round(shh);c.getContext("2d").drawImage(oc,(1600-sw)/2,(900-shh)/2,sw,shh,0,0,c.width,c.height)})})}
+  art();rethem.push(art);
 })();
 
 /* SHA-256 */
@@ -531,18 +617,18 @@ var sha256=(function(){var K=[],H0=[],n=2,i=0;while(i<64){var p=true;for(var d=2
   function size(){D=Math.min(devicePixelRatio||1,2);W=c.clientWidth;H=c.clientHeight;c.width=W*D;c.height=H*D;x.setTransform(D,0,0,D,0,0)}
   function nodes(){var bx=W*.06,by=H*.2,bw=W*.62,bh=H*.62;return {b:[bx,by,bw,bh],d:[bx+bw*.2,by+bh*.5],e:[bx+bw*.56,by+bh*.5],o:[bx+bw*.86,by+bh*.5],c:[W*.86,H*.5]}}
   function rr(a,b,w,h,r){x.beginPath();x.moveTo(a+r,b);x.arcTo(a+w,b,a+w,b+h,r);x.arcTo(a+w,b+h,a,b+h,r);x.arcTo(a,b+h,a,b,r);x.arcTo(a,b,a+w,b,r);x.closePath()}
-  function draw(now){if(!vis){requestAnimationFrame(draw);return}var n=nodes(),b=n.b,fs=Math.max(9.5,W*.0135);x.clearRect(0,0,W,H);
-    x.lineWidth=1.2;x.strokeStyle=cloud?"rgba(255,255,255,.25)":ICE;x.shadowColor=ICE;x.shadowBlur=cloud?0:14;x.setLineDash(cloud?[5,7]:[]);rr(b[0],b[1],b[2],b[3],Math.min(W,H)*.05);x.stroke();x.setLineDash([]);x.shadowBlur=0;
-    x.font="400 "+fs+"px Michroma,sans-serif";x.textAlign="left";x.fillStyle="rgba(255,255,255,.55)";try{x.letterSpacing="1.5px"}catch(_){}x.fillText(T("IL TUO PERIMETRO","YOUR PERIMETER"),b[0]+2,b[1]-14);
-    var R=Math.min(W,H)*.07;[[n.d,T("Dati","Data"),"#fff",1],[n.e,T("Motori","Engines"),"#fff",!cloud],[n.o,T("Esiti","Outcomes"),"#fff",1],[n.c,"Cloud",RED,cloud]].forEach(function(a){var p=a[0];x.globalAlpha=a[3]?1:.14;
+  function draw(now){if(!vis){requestAnimationFrame(draw);return}var n=nodes(),b=n.b,fs=Math.max(9.5,W*.0135);x.clearRect(0,0,W,H);ICE=TH.ice();var FG=TH.fg,FA=function(a){return "rgba("+TH.fgc+","+a+")"};
+    x.lineWidth=1.2;x.strokeStyle=cloud?FA(.25):ICE;x.shadowColor=ICE;x.shadowBlur=cloud||!TH.glow?0:14;x.setLineDash(cloud?[5,7]:[]);rr(b[0],b[1],b[2],b[3],Math.min(W,H)*.05);x.stroke();x.setLineDash([]);x.shadowBlur=0;
+    x.font="400 "+fs+"px Michroma,sans-serif";x.textAlign="left";x.fillStyle=FA(.55);try{x.letterSpacing="1.5px"}catch(_){}x.fillText(T("IL TUO PERIMETRO","YOUR PERIMETER"),b[0]+2,b[1]-14);
+    var R=Math.min(W,H)*.07;[[n.d,T("Dati","Data"),FG,1],[n.e,T("Motori","Engines"),FG,!cloud],[n.o,T("Esiti","Outcomes"),FG,1],[n.c,"Cloud",RED,cloud]].forEach(function(a){var p=a[0];x.globalAlpha=a[3]?1:.14;
       x.beginPath();x.arc(p[0],p[1],R,0,6.283);x.strokeStyle=a[2];x.lineWidth=1;x.stroke();x.beginPath();x.arc(p[0],p[1],R*.2*(1+.14*Math.sin(now*.003+p[0])),0,6.283);x.fillStyle=a[2];x.fill();
-      x.textAlign="center";x.fillStyle="rgba(255,255,255,.8)";x.fillText(a[1].toUpperCase(),p[0],p[1]+R+fs*2.2);x.globalAlpha=1});
+      x.textAlign="center";x.fillStyle=FA(.8);x.fillText(a[1].toUpperCase(),p[0],p[1]+R+fs*2.2);x.globalAlpha=1});
     if(now-sp>110){sp=now;P.push({t:0,cl:cloud,j:(Math.random()-.5)*H*.08})}
     for(var i=P.length-1;i>=0;i--){var q=P[i];q.t+=.008;if(q.t>=1){P.splice(i,1);continue}var a,bb,k,col;
-      if(!q.cl){col=q.t<.5?"#fff":ICE;if(q.t<.5){a=n.d;bb=n.e;k=q.t*2}else{a=n.e;bb=n.o;k=(q.t-.5)*2}}
+      if(!q.cl){col=q.t<.5?FG:ICE;if(q.t<.5){a=n.d;bb=n.e;k=q.t*2}else{a=n.e;bb=n.o;k=(q.t-.5)*2}}
       else{col=RED;if(q.t<.5){a=n.d;bb=n.c;k=q.t*2;if(!q.c&&k>.62){q.c=1;leak++;$("#leak").textContent=leak}}else{a=n.c;bb=n.o;k=(q.t-.5)*2}}
       var e=k*k*(3-2*k),px=a[0]+(bb[0]-a[0])*e,py=a[1]+(bb[1]-a[1])*e+Math.sin(e*3.1416)*(q.j-(q.cl?H*.2:0));
-      x.beginPath();x.arc(px,py,Math.max(1.6,W*.0032),0,6.283);x.fillStyle=col;x.shadowColor=col;x.shadowBlur=10;x.fill();x.shadowBlur=0}
+      x.beginPath();x.arc(px,py,Math.max(1.6,W*.0032),0,6.283);x.fillStyle=col;x.shadowColor=col;x.shadowBlur=TH.glow?10:0;x.fill();x.shadowBlur=0}
     requestAnimationFrame(draw)}
   function set(v){cloud=v;$("#swA").classList.toggle("a",!v);$("#swB").classList.toggle("a",v);leak=0;$("#leak").textContent="0";$("#leak").style.color=v?RED:""}
   $("#swA").onclick=function(){set(false)};$("#swB").onclick=function(){set(true)};
